@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Finetuning</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='airplane.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='airplane.png') }}" class="icon" />
+  <h3>Classify Motorcycles or Autos</h3>
+  <form action="/" method="post">
+  <div class="form">
+    <input id="user_input" type="text" name="user_input" placeholder="Enter your news sequence" required/>
+    <input type="submit" name="Motorcycles or Autos" />
+    <!-- <button onclick="sendChat();" >Motorcycles or Autos</button> -->
+  </div>
+  </form>
+  {% if result %}
+    <div class="result">{{ result }}</div>
+
+  <!-- <div class="result"><span id="result"></span></div> -->
+  {% endif %}
+</body>
